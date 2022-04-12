@@ -10,6 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/aos/aos.css" />
+        <meta name="keywords" content="Attefallshus, bygg, bygglovsfritt, bygglov, lov, kund, bolag, exterior, montering, nyckelfärdig, tillverkning, leverans, transport, producering, bygg hus, sovrum, badrum, vardagsrum, stuga, villa, små hus, grind, staket, altan, fritid, fritidshus, 30kvm, 60kvm, 100kvm, m2, etta, plåt, tak, modul, modulhus, isolering, vägg, element, jag, vill, bygga, mitt, hus, byggmax, bauhaus, beijer, värme, golv, grund, plattgrund, plintgrund, krypgrund, betong, pålitig, snickeri">
+        <meta name="description" content="Tillverkning av nyckelfärdiga attefallshus och leverans till vald plats samt montering och installering. Attefallshus är ett bygglovsfritt
+        hus som har en area på 30kvm med ett badrum, ett sovrum och ett vardagsrum. Interioren är uppbyggd utifrån kundens urval av golv, kakel, klinker, vägg och tak. ">
         <style>
             * {
                 box-sizing: border-box;
@@ -33,6 +36,43 @@
                 width: 100%;
                 height: 100%;
                 display: inline-block;
+            }
+
+            @media all and (max-width: 768px) {
+                .menuOpen {
+                    position: absolute;
+                    width: 100%;
+                    top: 6.8vh;
+                    left: 0;
+                    height: 82vh;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    transition: 0.25s;
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                    border-bottom: 3px solid white;
+                    border-top: 3px solid white;
+                }
+
+                .menuOpen > * {
+                    width: 100%;
+                    border: 1px solid white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .menuHidden {
+                    height: 0px;
+                    position: fixed;
+                }
+
+                .expandedAtteimage {
+                    width: 100% !important;
+                }
             }
         </style>
     </head>

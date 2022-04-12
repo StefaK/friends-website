@@ -13,6 +13,11 @@ const Page = styled.section`
     padding: 20px;
     height: 93vh;
     background-color: #2D3142;
+    overflow-x: hidden;
+
+    @media(max-width: 768px) {
+        font-size: 1.2rem;
+    }
     `;
 
 const ContactForm = styled.div`
@@ -25,6 +30,10 @@ const ContactForm = styled.div`
     flex-direction: column;
     padding: 30px;
     border-radius: 10px;
+
+    @media(max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const IconTextContainer = styled.div`
@@ -32,6 +41,10 @@ const IconTextContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-top: 15px;
+
+    p {
+        margin-left: 10px;
+    }
 `;
 
 export default function Kontakt() {
@@ -46,12 +59,12 @@ export default function Kontakt() {
 
                 <IconTextContainer>
                     <ImMobile />
-                    <p>Mobilnummer: [KOMMER SNART]</p>
+                    <p>Mobilnummer: 0728710596</p>
                 </IconTextContainer>
 
                 <IconTextContainer>
                     <GrMail />
-                    <p>Email: [KOMMER SNART]</p>
+                    <p>Email: [COMING SOON]</p>
                 </IconTextContainer>
             </ContactForm>
         </Page>

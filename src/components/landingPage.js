@@ -5,8 +5,15 @@ import { FaCheckCircle } from "react-icons/fa";
 const Page = styled.main`
     width: 100%;
     height: 93vh;
-    padding: 30px;
-    overflox: hidden;
+    overflow: hidden;
+
+    @media(max-width: 768px) {
+        height: 900px;
+    }
+
+    @media(max-width: 344px) {
+        height: 1100px;
+    }
 `;
 
 const WelcomeHeader = styled.h2`
@@ -14,6 +21,11 @@ const WelcomeHeader = styled.h2`
     margin-top: 150px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2.5rem;
+
+    @media(max-width: 768px) {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
 `;
 
 const WelcomeText = styled.p`
@@ -22,6 +34,15 @@ const WelcomeText = styled.p`
     margin-top: 10px;
     line-height: 25px;
     font-size: 1.5rem;
+
+    @media(max-width: 768px) {
+        width: 100%;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 `;
 
 const WelcomeList = styled.ul`
@@ -40,6 +61,10 @@ const FoundationExamplesContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 100px;
+
+    @media(max-width: 319px) {
+        flex-direction: column;
+    }
 `;
 
 const FoundationExample = styled.div`
@@ -49,6 +74,15 @@ const FoundationExample = styled.div`
     flex-direction: column;
     font-size: 1.5rem;
     margin-right: 15px;
+
+    @media(max-width: 768px) {
+        font-size: 1.2rem;
+    }
+
+    @media(max-width: 319px) {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
 `;
 
 const ImageAlbumContainer = styled.div`
@@ -83,56 +117,88 @@ const FullScreenIMG = styled.image`
     width: 100%;
     height: 100%;
     filter: brightness(50%);
+
+    @media(max-width: 768px) {
+        filter: blur(10px) brightness(50%);
+    }
+    `;
+
+const Content = styled.div`
+    width: 90%;
+    height: 100%;
+    padding: 30px;
+`
+
+const Lajsne = styled.div`
+    width: 5%;
+    height: 100%;
+    background-color: black;
+    @media(max-width: 768px) {
+        display: none;
+    }
+`;
+
+const GeneralContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 export default function LandingPage() {
     return (
         <Page id="home">
             <FullScreenIMG />
-            <div data-aos="flip-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" >
-                <WelcomeHeader>Välkommen!</WelcomeHeader>
-                <WelcomeText>Letar du efter nyckelfärdig attefallshus? Då är du på rätt plats!</WelcomeText>
-                <WelcomeList>
-                    <WelcomeListItem>
-                        Vi erbjuder dig ett brett val av attefallshus.
-                    </WelcomeListItem>
-                    <WelcomeListItem>
-                        Vi hjälper dig att
-                        välja rätt hus som ska uppfylla dina behov efter dina omständigheter
-                        till ett rimligt pris.
-                    </WelcomeListItem>
-                    <WelcomeListItem>
-                        Du som kund hos oss ska känna dig nöjd med
-                        slutprodukten och vi vill göra vårt bästa att det ser ut som du
-                        har tänkt dig.
-                    </WelcomeListItem>
-                    <WelcomeListItem>
-                        Vi sköter transporten. 
-                    </WelcomeListItem>
+            <GeneralContainer data-aos="flip-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" >
+                <Lajsne />
+                <Content>
+                    <WelcomeHeader>Välkommen!</WelcomeHeader>
+                    <WelcomeText>Letar du efter nyckelfärdig attefallshus? Då är du på rätt plats!</WelcomeText>
+                    <WelcomeList>
+                        <WelcomeListItem>
+                            Vi erbjuder dig ett brett val av attefallshus.
+                        </WelcomeListItem>
+                        <WelcomeListItem>
+                            Vi hjälper dig att
+                            välja rätt hus som ska uppfylla dina behov efter dina omständigheter
+                            till ett rimligt pris.
+                        </WelcomeListItem>
+                        <WelcomeListItem>
+                            Du som kund hos oss ska känna dig nöjd med
+                            slutprodukten och vi vill göra vårt bästa att det ser ut som du
+                            har tänkt dig.
+                        </WelcomeListItem>
+                        <WelcomeListItem>
+                            Vi sköter transporten. 
+                        </WelcomeListItem>
 
-                    <WelcomeListItem>
-                        Vi ordnar grunden beroende på miljöns tillstånd
-                        samt andra faktorer.
-                    </WelcomeListItem>
-                </WelcomeList>
+                        <WelcomeListItem>
+                            Vi ordnar grunden beroende på miljöns tillstånd
+                            samt andra faktorer (plattgrund, krypgrund, plintgrund).
+                        </WelcomeListItem>
+                    </WelcomeList>
 
-                <FoundationExamplesContainer>
-                    <FoundationExample>
-                        <FaCheckCircle />
-                        Plattgrund
-                    </FoundationExample>
+                    <FoundationExamplesContainer>
+                        <FoundationExample>
+                            <FaCheckCircle />
+                            TIllverkning
+                        </FoundationExample>
 
-                    <FoundationExample>
-                        <FaCheckCircle />
-                        Plintgrund
-                    </FoundationExample>
+                        <FoundationExample>
+                            <FaCheckCircle />
+                            Transport
+                        </FoundationExample>
 
-                    <FoundationExample>
-                        <FaCheckCircle />
-                        Krypgrund
-                    </FoundationExample>
-                </FoundationExamplesContainer>
-            </div>
+                        <FoundationExample>
+                            <FaCheckCircle />
+                            Grund
+                        </FoundationExample>
+                    </FoundationExamplesContainer>
+                </Content>
+                <Lajsne />
+
+            </GeneralContainer>
             
         </Page>
     );

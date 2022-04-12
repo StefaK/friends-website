@@ -7,6 +7,7 @@ import LandingPage from "./components/landingPage";
 import OmOss from "./components/om_oss";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { FiMenu } from "react-icons/fi";
 
 const App = styled.div`
     width: 100%;
@@ -49,18 +50,25 @@ const Navbar = styled.nav`
 `;
 
 const NavButton = styled.span`
-    height: 100%;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
     padding: 15px;
     font-size: 18px;
     transition: 0.25s;
     color: white;
-    :hover {
-        color: #7D84B2;
-        cursor: pointer;
+
+    @media(min-width: 769px) {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        height: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+
+        :hover {
+            color: #7D84B2;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 768px) {
     }
 
     @media (max-width: 400px) {
@@ -68,17 +76,37 @@ const NavButton = styled.span`
     }
 `;
 
+const NavButtons = styled.div`
+    overflow: hidden;
+`;
+
+const ToggleMenuButton = styled.div`
+    @media(max-width: 768px) {
+        font-size: 15px;
+    }
+
+    @media(min-width: 769px) {
+        display: none;
+    }
+`;
+
 function Main() {
+    function toggleMenu() {
+        document.getElementById("navbuttons").classList.toggle("menuHidden");
+        document.getElementById("navbuttons").classList.toggle("menuOpen");
+    }
+
     return (
             <App>
                 <Navbar>
                     <MainHeader>Bygg Ditt Hus</MainHeader>
-                    <div>
-                        <Link spy={true} smooth={true} offset={-50} duration={500} to="home"><NavButton>Hem</NavButton></Link>
-                        <Link spy={true} smooth={true} offset={-50} duration={500} to="om-oss"><NavButton>Om oss</NavButton></Link>
-                        <Link spy={true} smooth={true} offset={-50} duration={500} to="kontakt"><NavButton>Kontakt</NavButton></Link>
-                        <Link spy={true} smooth={true} offset={-50} duration={500} to="attefallshus"><NavButton>Attefallshus</NavButton></Link>
-                    </div>
+                    <ToggleMenuButton onClick={toggleMenu}><FiMenu /></ToggleMenuButton>
+                    <NavButtons className="menuHidden" id="navbuttons">
+                        <Link onClick={toggleMenu} spy={true} smooth={true} offset={-50} duration={500} to="home"><NavButton>Hem</NavButton></Link>
+                        <Link onClick={toggleMenu} spy={true} smooth={true} offset={-50} duration={500} to="om-oss"><NavButton>Om oss</NavButton></Link>
+                        <Link onClick={toggleMenu} spy={true} smooth={true} offset={-50} duration={500} to="attefallshus"><NavButton>Attefallshus</NavButton></Link>
+                        <Link onClick={toggleMenu} spy={true} smooth={true} offset={-50} duration={500} to="kontakt"><NavButton>Kontakt</NavButton></Link>
+                    </NavButtons>
                 </Navbar>
                 {/* <Routes>
                     <Route path="/" element={<LandingPage />}/> 

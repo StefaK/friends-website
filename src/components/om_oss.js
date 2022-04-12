@@ -9,8 +9,22 @@ const Page = styled.section`
     grid-template-columns: auto auto;
     padding: 20px;
     font-size: 1.5rem;
-    height: 93vh;
     overflow: hidden;
+
+    @media(min-width: 769px) {
+        height: 93vh;
+    }
+
+    @media(max-width: 768px) {
+        padding: 5px;
+        min-height: 1100px;
+        font-size: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 `;
 
 const CoolStuffSection = styled.div`
@@ -18,20 +32,34 @@ const CoolStuffSection = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;    
+
+    @media(max-width: 768px) {
+        width: 100%;
+        margin-top: 15px;
+    }
 `;
 
 const CoolThing = styled.div`
     margin-bottom: 15px;
     padding: 15px;
-    border: 2px solid white;
-    border-radius: 10px;
-    margin-right: 40px;
-    width: 300px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
+
+    @media(min-width: 768px) {
+        border: 2px solid white;
+        border-radius: 10px;
+        margin-right: 40px;
+        width: 300px;
+    }
+
+    @media(max-width: 768px) {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        width: 100%;
+    }
 `;
 
 const AboutUsSection = styled.div`
@@ -39,6 +67,12 @@ const AboutUsSection = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media(max-width: 768px) {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 `;
 
 const AboutUsHeader = styled.h2`
@@ -53,6 +87,7 @@ const AboutUsText = styled.p`
 const FullScreenIMG = styled.img`
     position: absolute;
     left: 0;
+    top: inherit;
     background-image: url("/images/truck.jpg");
     background-size: 100% 100%;
     width: 100%;
@@ -63,7 +98,6 @@ const FullScreenIMG = styled.img`
 export default function OmOss() {
     return (
         <Page id="om-oss">
-            <FullScreenIMG />
             <CoolStuffSection data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <CoolThing>
                     <AiFillStar style={{fontSize: 34}}/>
