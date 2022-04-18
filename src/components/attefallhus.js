@@ -33,7 +33,8 @@ const Image = styled.img`
     border: 1px solid white;
     border-radius: 10px;
     transition: 0.25s;
-
+    margin-top: 15px;
+    
     @media(min-width: 769px) {
         :hover {
             transform: scale(1.5);
@@ -75,6 +76,8 @@ export default function Attefallhus() {
                 <Image onClick={toggleImageExpandedMobile} id="at1" alt="Modulhus" src="/images/attehus1.jpg"></Image>
                 <Image onClick={toggleImageExpandedMobile} id="at2" alt="Attefallshus kök" src="/images/STAN.jpg"></Image>
                 <Image onClick={toggleImageExpandedMobile} id="at3" alt="Attefallshus vägg kakel klinker sten" src="/images/kakel.jpg"></Image>
+                <Image onClick={toggleImageExpandedMobile} id="at4" alt="Attefallshus utsida" src="/images/framsida.jpeg"></Image>
+                <Image onClick={toggleImageExpandedMobile} id="at5" alt="Attefallshus utsida" src="/images/baksida.jpeg"></Image>
             </ImagesContainer>
 
             <PlayerContainer>

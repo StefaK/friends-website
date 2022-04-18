@@ -85,19 +85,25 @@ const AboutUsText = styled.p`
 `;
 
 const FullScreenIMG = styled.img`
-    position: absolute;
-    left: 0;
-    top: inherit;
-    background-image: url("/images/truck.jpg");
-    background-size: 100% 100%;
-    width: 100%;
-    height: 100%;
-    filter: brightness(50%);
+    @media(min-width: 769px) {
+        position: absolute;
+        left: 0;
+        background-image: url("/images/truck.jpg");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        filter: brightness(50%);
+    }
+
+    @media(max-width: 768px) {
+        display: none;
+    }
 `;
 
 export default function OmOss() {
     return (
         <Page id="om-oss">
+            <FullScreenIMG />
             <CoolStuffSection data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <CoolThing>
                     <AiFillStar style={{fontSize: 34}}/>
