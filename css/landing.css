@@ -1,7 +1,7 @@
 #showcase {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     padding-left: 20px;
@@ -24,6 +24,14 @@
 @media only screen and (max-width: 767px) {
     html {
         background-image: url("/images/tiera-small.jpg");        
+    }
+
+    #showcase p {
+        font-size: 13px;
+    }
+
+    #showcase li {
+        font-size: 13px;
     }
 }
 
@@ -80,7 +88,6 @@
 #showcase-list {
     margin-top: 20px;
     max-width: 1000px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,6 +109,8 @@
     border: 3px solid #4d3e17;
     border-radius: 30%;
     background-color: rgba(95, 87, 15, 0.39);
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 @media only screen and (max-width: 510px) {
@@ -113,12 +122,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-direction: column;
     }
 
     .showcase-list-item {
-        width: 100%;
+        width: 100px;
         padding: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+
     }
 }
 

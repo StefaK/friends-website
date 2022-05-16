@@ -3,6 +3,7 @@
 @import "/css/classes.css";
 @import "/css/album.css";
 @import "/css/footer.css";
+@import "/css/contactUs.css";
 
 * {
     box-sizing: border-box;
